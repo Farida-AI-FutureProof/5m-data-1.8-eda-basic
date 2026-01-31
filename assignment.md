@@ -13,10 +13,8 @@ Paste the answer as Python in the answer code section below each question.
 Question: How do you select rows from a DataFrame where any value in the row exceeds a threshold?
 
 ```python
-import pandas as pd
+filtered_df = df[df.gt(threshold).any(axis=1)]
 
-df = pd.DataFrame({'A': [1, 2, 3, 4, 5], 'B': [10, 20, 30, 40, 50]})
-threshold = 30
 ```
 
 Answer:
@@ -30,9 +28,8 @@ Answer:
 Question: How do you sort a DataFrame by columns `A` and `B`?
 
 ```python
-import pandas as pd
+sorted_df = df.sort_values(by=['A', 'B'])
 
-df = pd.DataFrame({'A': [2, 1, 2], 'B': [2, 3, 1], 'C': [1, 2, 3]})
 ```
 
 Answer:
@@ -46,10 +43,8 @@ Answer:
 Question: How do you concatenate two DataFrames vertically?
 
 ```python
-import pandas as pd
+combined_df = pd.concat([df1, df2], ignore_index=True)
 
-df1 = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})
-df2 = pd.DataFrame({'A': [7, 8, 9], 'B': [10, 11, 12]})
 ```
 
 Answer:
@@ -63,9 +58,8 @@ Answer:
 Question: How do you compute the cumulative sum of a column in a DataFrame?
 
 ```python
-import pandas as pd
+df['A_cumsum'] = df['A'].cumsum()
 
-df = pd.DataFrame({'A': [1, 2, 3, 4, 5]})
 ```
 
 Answer:
@@ -87,6 +81,7 @@ series = pd.Series(['apple', 'banana', 'cherry'])
 Answer:
 
 ```python
+upper_series = series.str.upper()
 
 ```
 
